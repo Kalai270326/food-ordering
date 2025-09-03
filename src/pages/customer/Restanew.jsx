@@ -29,6 +29,7 @@ function CreateMenu() {
         setImage(value);
     }
   }
+
 async function handleSubmit(e) {
     e.preventDefault();
     try {
@@ -39,6 +40,7 @@ async function handleSubmit(e) {
         image
       });
       console.log(response.data);
+     
       setError(response?.data.message);
     
       setMenuName('');

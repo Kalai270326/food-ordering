@@ -9,6 +9,7 @@ function Customerlogin() {
   //usestate
   const [email,setEmail]=useState('')
   const[password,setPassword]=useState('')
+  const[error,setError]=useState()
   const navigate=useNavigate()
 //handle the customer
   function handleuser(e){
@@ -21,11 +22,7 @@ function Customerlogin() {
       setPassword(value)
      }
      
-
-
-
-
-  }
+    }
  //get api 
 async function customerlogin(e){
  e.preventDefault();
@@ -35,6 +32,8 @@ async function customerlogin(e){
     const res=await axios.post('http://localhost:3000/logincustomer',{email,password})
      localStorage.setItem('token',res.data?.token)
      const extractedToken=jwtDecode(res.data?.token)
+     setError(res?.data?.message)
+    
     //  console.log(extractedToken)
      if(extractedToken.role == 'customer')
      {
@@ -52,6 +51,7 @@ async function customerlogin(e){
 
       <div className="login-headerr"><h3>User Login</h3></div>
       <form className="login-form">
+      {error && <p className="error-message">{error}</p>}
         <label>Email:</label>
         <input type="email" name="email" value={email} placeholder="Enter your email" onChange={(e)=>{handleuser(e)}} />
         <label>Password:</label>
@@ -60,6 +60,7 @@ async function customerlogin(e){
         <div className="register-link">
         <h5>Don't have an account?</h5>
         <Link to="/custregister">Register</Link><br />
+
         </div>
       </form>
       </div>

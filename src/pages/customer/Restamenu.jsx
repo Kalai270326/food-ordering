@@ -5,7 +5,7 @@ import './Restamenu.css'
 
 
 
-function Restamenu() {
+function Restamenu({customerorder}) {
 
    const [restaurantname, setRestaurantName] = useState('');
     const [menuItems, setMenuItems] = useState();
@@ -29,6 +29,7 @@ function Restamenu() {
         const response = await axios.get('http://localhost:3000/menu/getspecific', { params: { restaurantname: name } });
         setMenuItems(response?.data);
         console.log(response.data);
+        console.log(customerorder);
       } catch (error) {
         console.error('Error fetching specific menu:', error);
       }

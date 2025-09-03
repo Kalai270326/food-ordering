@@ -7,7 +7,12 @@ function Home() {
     <div className='main-home'>
       <div className='djjs'>&nbsp;    </div>
       <div className='main1'>
-        <p>ss</p>
+        
+        <img src="https://i.pinimg.com/736x/e6/33/a6/e633a6772819306be206f8644dcdc201.jpg" alt=""  height={'300px'} width={'300px'}/>
+        
+        {/* <img src="https://s.yimg.com/ny/api/res/1.2/ClmHOaflmQ6GSxUYjBrC4Q--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTk7Y2Y9d2VicA--/https://media.zenfs.com/en/redbook_842/7cd04714fa06eb5f900998a902da992a" alt=""  height={'300px'} width={'300px'}/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0YazDlkHQ9kCsnXlPeum_GrkCzy32RYpX4A&s" alt=""  height={'300px'} width={'300px'}/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWTBJSW_wAnPKhdQUWMfhl1zHPeZdPG4Twmw&s" alt=""  height={'300px'} width={'300px'}/> */}
       </div>
       <h4 className='popular-items'>Popular Items</h4>
       <div className='main-items'>

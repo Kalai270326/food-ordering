@@ -20,6 +20,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 
+
 function App() {
   const [allmenu, setAllMenu] = useState()
     const[order,setOrder]=useState()
@@ -48,8 +49,8 @@ function App() {
   <Route path='/customer' element={<Customer allmenu={allmenu} setOrder={setOrder}  order={order} />}/>
   <Route path='/logout' element={<Logout/>}/>
   <Route path='/restaurant' element={<Restaurant/>}/>
-  <Route path='/restamenu' element={<Restamenu/>}/>
-      <Route path='/restanew' element={<Restanew/>}/>
+  <Route path='/restamenu' element={<Restamenu customerorder={customerorder}/>}/>
+      <Route path='/restanew' element={<Restanew  />}/>
       <Route path='/restaorder' element={<Restaorder  customerorder={customerorder} />}/>
       <Route path='/orders/:id' element={<Order order={order} setCustomerOrder={setCustomerOrder} customerorder={customerorder}  />}/>
       <Route path='/customerorder' element={<Customerorder/>}/>

@@ -1,12 +1,13 @@
 import React from 'react'
 import { jwtDecode } from 'jwt-decode';
 
-function Restaorder({ customerorder }) {
+function Restaorder() {
     const token = localStorage.getItem('token');
        const decode = jwtDecode(token);
        const restaname = decode?.restaurantname;
 
-   
+console.log(restaname);
+console.log(customerorder);
 
 
   
@@ -15,9 +16,10 @@ function Restaorder({ customerorder }) {
     <div>
       <h2>Customer Orders {restaname}</h2>
 
- {customerorder.length > 0 ? (
+ {Array.isArray(customerorder) && customerorder.length > 0 ? (
+
         customerorder.map((order, index) => (
-          <div key={index} style={{ border: '1px solid #ccc', marginBottom: '10px', padding: '10px' }}>
+          <div  style={{ border: '1px solid #ccc', marginBottom: '10px', padding: '10px' }}>
             <p><strong>Customer:</strong> {order.customerName}</p>
             <p><strong>Phone:</strong> {order.phone}</p>
             <p><strong>Item:</strong> {order.menuname}</p>
