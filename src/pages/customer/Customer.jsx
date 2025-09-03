@@ -23,8 +23,8 @@ function Customer({allmenu,setOrder,order}) {
     < div className='customer-page'>
       <div className='view-order'><button onClick={() => navigate('/ordersummary')}>View order</button></div>
     <div className='customer'>
-       {allmenu?.map((item) => (
-        <div className='menu-list'>
+       { allmenu?.map((item,index) => (
+        <div className='menu-list' key={index}>
           <img src={item.image} alt='' height={'100px'} width={'100px'} />
             <p>{item.menuname}</p>
             <p>Price:{item.price}</p>

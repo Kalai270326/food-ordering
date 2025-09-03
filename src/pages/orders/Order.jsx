@@ -17,6 +17,7 @@ function Order({setCustomerOrder,customerorder,order}) {
   const totalPrice = product ? product.price * quantity : 0;
 
   function handleclick(prod) {
+
     setMessage('Order placed successfully!')
     
     if(customerorder?.length>0){
@@ -30,6 +31,7 @@ function Order({setCustomerOrder,customerorder,order}) {
     }
    
     console.log(customerorder);
+    localStorage.setItem('customerorder', JSON.stringify(customerorder));
 
 
   

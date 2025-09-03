@@ -35,9 +35,11 @@ function App() {
    }, [])
   return (
     <div> 
+     
        <BrowserRouter>
       <Mainlayout>
 <Routes>
+   <Route path='/restaorder' element={<Restaorder customerorder={customerorder} />}/>
 
   <Route path='/' element={<Home/>}/>
   {/* //customer login and register */}
@@ -49,9 +51,9 @@ function App() {
   <Route path='/customer' element={<Customer allmenu={allmenu} setOrder={setOrder}  order={order} />}/>
   <Route path='/logout' element={<Logout/>}/>
   <Route path='/restaurant' element={<Restaurant/>}/>
-  <Route path='/restamenu' element={<Restamenu customerorder={customerorder}/>}/>
-      <Route path='/restanew' element={<Restanew  />}/>
-      <Route path='/restaorder' element={<Restaorder  customerorder={customerorder} />}/>
+  <Route path='/restamenu' element={<Restamenu />}/>
+  <Route path='/restanew' element={<Restanew  />}/>
+     
       <Route path='/orders/:id' element={<Order order={order} setCustomerOrder={setCustomerOrder} customerorder={customerorder}  />}/>
       <Route path='/customerorder' element={<Customerorder/>}/>
       <Route path='/ordersummary' element={<OrderSummary customerorder={customerorder} />} />
@@ -59,7 +61,9 @@ function App() {
 </Routes>
  </Mainlayout>
     
-    </BrowserRouter></div>
+    </BrowserRouter>
+   
+    </div>
   
   )
 }
