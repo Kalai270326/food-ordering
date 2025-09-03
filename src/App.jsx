@@ -24,7 +24,7 @@ import axios from 'axios'
 function App() {
   const [allmenu, setAllMenu] = useState()
     const[order,setOrder]=useState()
-    const [customerorder, setCustomerOrder] = useState('')
+    const [customerorder, setCustomerOrder] = useState([])
    useEffect(() => {
      async function getallmenu (){
         const response=await axios.get('http://localhost:3000/menu/all')
